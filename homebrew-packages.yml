@@ -1,0 +1,113 @@
+---
+- name: Install MacOS Packages
+  hosts: localhost
+  become: false
+
+  vars:
+    install_homebrew_if_missing: false
+    upgrade_homebrew_packages: false
+
+  pre_tasks:
+    - name: Check if Homebrew is installed
+      stat:
+        path: "/usr/local/bin/brew"
+      register: homebrew_check
+
+    - name: Install Homebrew
+      command: '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+      when: not homebrew_check.stat.exists and install_homebrew_if_missing
+
+    - name: Homebrew not installed
+      fail:
+        msg: "Homebrew is missing...Install from http://brew.sh/"
+      when: not homebrew_check.stat.exists and not install_homebrew_if_missing
+
+  tasks:
+    - name: Update Homebrew
+      homebrew:
+        update_homebrew: true
+      when: homebrew_check.stat.exists and upgrade_homebrew_packages
+
+    - name: Install Homebrew packages
+      homebrew:
+        name:
+          - ansible
+          - aspell
+          - bash
+          - binutils
+          - coreutils
+          - curl
+          - diffutils
+          - findutils
+          - git
+          - git-extras
+          - git-lfs
+          - gitg
+          - go
+          - htop
+          - iftop
+          - jq
+          - maven
+          - mercurial
+          - mosh
+          - openssh
+          - packer
+          - pandoc
+          - redis
+          - shellcheck
+          - ssh-copy-id
+          - sshfs
+          - tig
+          - tmux
+          - tree
+          - vim
+          - wget
+        state: present
+        upgrade_all: "{{ upgrade_homebrew_packages }}"
+      when: homebrew_check.stat.exists
+
+    - name: Install Homebrew Cask packages
+      homebrew_cask:
+        name:
+          - dropbox
+          - google-backup-and-sync
+          # - google-drive-file-stream
+          - keepingyouawake
+          - lastpass
+          - spectacle
+
+          - firefox
+          - google-chrome
+
+          - emacs
+          - github
+          - intellij-idea
+          - java
+          - meld
+          - osxfuse
+          - sourcetree
+          - tigervnc-viewer
+          - visual-studio-code
+          - xquartz
+
+          - basictex
+          - freemind
+          - gimp
+          - libreoffice
+          # - skype-for-business
+          - slack
+          - yed
+
+          - docker
+          - minikube
+          - vagrant
+          - vagrant-manager
+          - virtualbox
+          - virtualbox-extension-pack
+
+          # - mkchromecast
+
+          - android-file-transfer
+          - android-studio
+        state: present
+      when: homebrew_check.stat.exists
