@@ -1,33 +1,10 @@
 ---
 - name: Install MacOS Packages
-  become: false
-
-  vars:
-    install_homebrew_if_missing: false
-    upgrade_homebrew_packages: false
-
-  pre_tasks:
-    - name: Check if Homebrew is installed
-      stat:
-        path: "/usr/local/bin/brew"
-      register: homebrew_check
-
-    - name: Install Homebrew
-      command: '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
-      when: not homebrew_check.stat.exists and install_homebrew_if_missing
-
-    - name: Homebrew not installed
-      fail:
-        msg: "Homebrew is missing...Install from http://brew.sh/"
-      when: not homebrew_check.stat.exists and not install_homebrew_if_missing
+  become: no
+  gather_facts: yes
   hosts: default
 
   tasks:
-    - name: Update Homebrew
-      homebrew:
-        update_homebrew: true
-      when: homebrew_check.stat.exists and upgrade_homebrew_packages
-
     - name: Install Homebrew packages
       homebrew:
         name:
@@ -65,8 +42,6 @@
           - watch
           - wget
         state: present
-        upgrade_all: "{{ upgrade_homebrew_packages }}"
-      when: homebrew_check.stat.exists
 
     - name: Install Homebrew GNU packages
       homebrew:
@@ -118,4 +93,3 @@
           - android-file-transfer
           - android-studio
         state: present
-      when: homebrew_check.stat.exists
