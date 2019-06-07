@@ -42,6 +42,7 @@
           - git
           - git-extras
           - git-lfs
+          - gnutls
           - go
           - htop
           - iftop
@@ -50,6 +51,7 @@
           - mercurial
           - mosh
           - openssh
+          - openssl
           - packer
           - pandoc
           - redis
@@ -60,10 +62,21 @@
           - tmux
           - tree
           - vim
+          - watch
           - wget
         state: present
         upgrade_all: "{{ upgrade_homebrew_packages }}"
       when: homebrew_check.stat.exists
+
+    - name: Install Homebrew GNU packages
+      homebrew:
+        name:
+          - gnu-sed
+          - gnu-tar
+          - gnu-which
+          - grep
+          - gzip
+        state: present
 
     - name: Install Homebrew Cask packages
       homebrew_cask:
