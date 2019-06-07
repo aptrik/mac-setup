@@ -1,6 +1,5 @@
 ---
 - name: Install MacOS Packages
-  hosts: localhost
   become: false
 
   vars:
@@ -21,6 +20,7 @@
       fail:
         msg: "Homebrew is missing...Install from http://brew.sh/"
       when: not homebrew_check.stat.exists and not install_homebrew_if_missing
+  hosts: default
 
   tasks:
     - name: Update Homebrew
@@ -70,7 +70,6 @@
         name:
           - dropbox
           - google-backup-and-sync
-          # - google-drive-file-stream
           - keepingyouawake
           - lastpass
           - spectacle
@@ -93,7 +92,6 @@
           - freemind
           - gimp
           - libreoffice
-          # - skype-for-business
           - slack
           - yed
 
@@ -103,8 +101,6 @@
           - vagrant-manager
           - virtualbox
           - virtualbox-extension-pack
-
-          # - mkchromecast
 
           - android-file-transfer
           - android-studio
