@@ -18,4 +18,4 @@ Clone this repository to your local drive.
 
     git clone https://github.com/aptrik/mac-setup.git
     cd mac-setup
-    ansible-playbook homebrew-packages.yml
+    ansible-playbook configure.yml
