@@ -93,3 +93,20 @@
           - android-file-transfer
           - android-studio
         state: present
+
+    - name: Add Font Tap
+      homebrew_tap:
+        name: caskroom/fonts
+        state: present
+
+    - name: Install Fonts
+      homebrew_cask:
+        name:
+          - font-droid-sans-mono-for-powerline
+          - font-envy-code-r
+          - font-fira-code
+          - font-fira-mono
+          - font-fira-mono-for-powerline
+          - font-inconsolata
+          - font-inconsolata-for-powerline
+          - font-open-sans
