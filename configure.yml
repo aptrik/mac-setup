@@ -102,6 +102,8 @@
     - name: Install Fonts
       homebrew_cask:
         name:
+          - font-dejavu-sans
+          - font-dejavu-sans-mono-for-powerline
           - font-droid-sans-mono-for-powerline
           - font-envy-code-r
           - font-fira-code
