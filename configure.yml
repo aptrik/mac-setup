@@ -65,6 +65,7 @@
           - firefox
           - google-chrome
 
+          - eclipse-rcp
           - emacs
           - fork
           - github
