@@ -74,6 +74,7 @@
           - java
           - meld
           - osxfuse
+          - tigervnc-viewer
           - visual-studio-code
           - xquartz
 
