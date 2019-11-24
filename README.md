@@ -19,3 +19,89 @@ Clone this repository to your local drive.
     git clone https://github.com/aptrik/mac-setup.git
     cd mac-setup
     ansible-playbook -vvv configure.yml
+
+## TODO
+
+### Software Update
+
+#### Ignore Specific Software Update
+
+The identifier can be found via softwareupdate --list. In the example below, being on Mojave, will ignore all update prompts to Catalina, since the latter removes 32-bit support.
+
+    sudo /usr/sbin/softwareupdate --ignore "macOS Catalina"
+
+#### Show Available Software Updates
+
+    sudo softwareupdate --list
+
+#### Install All Available Software Updates
+
+    sudo softwareupdate -ia
+
+
+### Bash
+
+Install the latest version and set as current user's default shell:
+
+    brew install bash && \
+        echo $(brew --prefix)/bin/bash | sudo tee -a /etc/shells && \
+        chsh -s $(brew --prefix)/bin/bash
+
+
+### Mail
+
+Show Attachments as Icons
+
+    defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes
+
+### Dock
+
+Add a Stack with Recent Applications
+
+    defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }' && \
+        killall Dock
+
+Autohide
+
+    # Enable
+    defaults write com.apple.dock autohide -bool true && \
+        killall Dock
+
+
+### Finder
+
+Show All File Extensions
+
+    defaults write -g AppleShowAllExtensions -bool true
+
+Show Path Bar
+
+    defaults write com.apple.finder ShowPathbar -bool true
+
+
+### Keyboard
+
+Full Keyboard Access
+
+    # All controls
+    defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+Key Repeat Rate
+
+    defaults write -g KeyRepeat -int 2
+
+
+### Hostname
+
+Set Computer Name/Host Name
+
+    sudo scutil --set ComputerName "newhostname" && \
+    sudo scutil --set HostName "newhostname" && \
+    sudo scutil --set LocalHostName "newhostname" && \
+    sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "newhostname"
+
+### Login Window
+
+Set Login Window Text
+
+    sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Your text"
