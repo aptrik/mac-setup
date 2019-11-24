@@ -9,6 +9,7 @@
       homebrew:
         name:
           - ansible
+          - asciinema
           - aspell
           - bash
           - binutils
@@ -16,6 +17,7 @@
           - curl
           - diffutils
           - findutils
+          - fzf
           - git
           - git-extras
           - git-lfs
@@ -58,6 +60,7 @@
       homebrew_cask:
         name:
           - dropbox
+          - fliqlo
           - google-backup-and-sync
           - karabiner-elements
           - keepingyouawake
@@ -81,6 +84,7 @@
           - xquartz
 
           - basictex
+          - calibre
           - freemind
           - gimp
           - libreoffice
