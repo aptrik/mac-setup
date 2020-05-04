@@ -44,6 +44,10 @@
           - vim
           - watch
           - wget
+
+          # Yubikey tools
+          - ykpers
+          - ykman
         state: present
 
     - name: Install Homebrew GNU packages
@@ -62,6 +66,7 @@
           - dropbox
           - fliqlo
           - google-backup-and-sync
+          - gpg-suite
           - karabiner-elements
           - keepingyouawake
           - lastpass
@@ -71,6 +76,7 @@
           - firefox
           - google-chrome
 
+          - android-studio
           - eclipse-rcp
           - emacs
           - fork
@@ -91,19 +97,17 @@
           - gimp
           - libreoffice
           - postman
-          - slack
           - yed
 
           - docker
           - minikube
-          #- podman
           - vagrant
           - vagrant-manager
           - virtualbox
           - virtualbox-extension-pack
 
-          - android-file-transfer
-          - android-studio
+          - microsoft-teams
+          - slack
         state: present
 
     - name: Add Font Tap
