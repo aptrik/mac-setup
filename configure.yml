@@ -35,6 +35,7 @@
           - openssl
           - packer
           - pandoc
+          - pv
           - redis
           - shellcheck
           - ssh-copy-id
