@@ -16,6 +16,7 @@
           - coreutils
           - curl
           - diffutils
+          - direnv
           - findutils
           - fzf
           - git
