@@ -38,6 +38,7 @@
           - pandoc
           - pv
           - redis
+          - ripgrep
           - shellcheck
           - ssh-copy-id
           - sshfs
