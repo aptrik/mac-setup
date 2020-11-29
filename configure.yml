@@ -1,14 +1,18 @@
 ---
 - name: Install MacOS Packages
-  become: no
-  gather_facts: yes
+  become: false
+  gather_facts: true
   hosts: default
+
+  vars:
+    virtualisation: false
 
   tasks:
     - name: Install Homebrew packages
-      homebrew:
+      community.general.homebrew:
         name:
           - ansible
+          - ansible-lint
           - asciinema
           - aspell
           - bash
@@ -55,7 +59,7 @@
         state: present
 
     - name: Install Homebrew GNU packages
-      homebrew:
+      community.general.homebrew:
         name:
           - gnu-sed
           - gnu-tar
@@ -65,10 +69,9 @@
         state: present
 
     - name: Install Homebrew Cask packages
-      homebrew_cask:
+      community.general.homebrew_cask:
         name:
           - dropbox
-          - fliqlo
           - google-backup-and-sync
           - gpg-suite
           - karabiner-elements
@@ -81,47 +84,46 @@
           - firefox
           - google-chrome
 
-          - android-studio
-          - eclipse-rcp
           - emacs
-          - fork
-          - github
-          - gitup
-          - intellij-idea
           - java
           - meld
           - osxfuse
-          - sourcetree
           - tigervnc-viewer
           - visual-studio-code
           - xquartz
 
           - basictex
-          - calibre
-          - freemind
-          - gimp
-          - libreoffice
-          - postman
           - yed
 
-          - docker
-          - minikube
-          - vagrant
-          - vagrant-manager
-          - virtualbox
-          - virtualbox-extension-pack
-
-          - microsoft-teams
+          - signal
           - slack
         state: present
 
+    - name: Install virtualisation packages
+      block:
+        - name: Install virtualisation packages
+          community.general.homebrew:
+            name:
+              - minikube
+            state: present
+        - name: Install virtualisation casks
+          community.general.homebrew_cask:
+            name:
+              - docker
+              - vagrant
+              - vagrant-manager
+              - virtualbox
+              - virtualbox-extension-pack
+            state: present
+      when: virtualisation|bool
+
     - name: Add Font Tap
-      homebrew_tap:
+      community.general.homebrew_tap:
         name: caskroom/fonts
         state: present
 
     - name: Install Fonts
-      homebrew_cask:
+      community.general.homebrew_cask:
         name:
           - font-dejavu-sans
           - font-dejavu-sans-mono-for-powerline
