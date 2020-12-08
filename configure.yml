@@ -77,9 +77,11 @@
           - karabiner-elements
           - keepingyouawake
           - lastpass
-          - qlmarkdown
           - rectangle
           - scroll-reverser
+
+          - qlmarkdown
+          - quicklook-json
 
           - firefox
           - google-chrome
@@ -97,6 +99,7 @@
 
           - signal
           - slack
+          - webex-meetings
         state: present
 
     - name: Install virtualisation packages
