@@ -86,6 +86,7 @@
           - firefox
           - google-chrome
 
+          - dash
           - emacs
           - java
           - meld
