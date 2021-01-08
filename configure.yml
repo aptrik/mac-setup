@@ -21,6 +21,7 @@
           - curl
           - diffutils
           - direnv
+          - entr
           - findutils
           - fzf
           - git
