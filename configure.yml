@@ -140,3 +140,15 @@
           - font-inconsolata
           - font-inconsolata-for-powerline
           - font-open-sans
+
+    - name: Hashicorp Tap
+      community.general.homebrew_tap:
+        name: hashicorp/tap
+        state: present
+
+    - name: Hashicorp packages
+      community.general.homebrew:
+        name:
+          - hashicorp/tap/packer
+          - hashicorp/tap/vault
+        state: present
