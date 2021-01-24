@@ -48,6 +48,7 @@
           - shellcheck
           - ssh-copy-id
           - sshfs
+          - svn
           - tig
           - tmux
           - tree
