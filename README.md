@@ -13,16 +13,12 @@ Ensure [Homebrew](https://brew.sh/) is installed.
 Ensure [Ansible](http://docs.ansible.com/intro_installation.html) is installed.
 
     brew install ansible
-
-Clone this repository to your local drive.
-
-    git clone https://github.com/aptrik/mac-setup.git
-    cd mac-setup
     ansible-galaxy collection install community.general
 
-    ansible-playbook configure.yml
+Run playbook:
 
-    ansible-playbook configure.yml -e virtualisation=true
+    ansible-pull --only-if-changed --url https://github.com/aptrik/mac-setup.git configure.yml
+    ansible-pull --only-if-changed --url https://github.com/aptrik/mac-setup.git configure.yml -e virtualisation=true
 
 ## TODO
 
