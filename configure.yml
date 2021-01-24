@@ -132,15 +132,11 @@
       community.general.homebrew_cask:
         name:
           - font-dejavu-sans
-          - font-dejavu-sans-mono-for-powerline
-          - font-droid-sans-mono-for-powerline
           - font-envy-code-r
           - font-fira-code
           - font-fira-mono
-          - font-fira-mono-for-powerline
           - font-inconsolata
-          - font-inconsolata-for-powerline
-          - font-open-sans
+        state: present
 
     - name: HashiCorp Tap
       community.general.homebrew_tap:
