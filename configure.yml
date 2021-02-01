@@ -124,21 +124,6 @@
             state: present
       when: virtualisation|bool
 
-    - name: Add Font Tap
-      community.general.homebrew_tap:
-        name: caskroom/fonts
-        state: present
-
-    - name: Install Fonts
-      community.general.homebrew_cask:
-        name:
-          - font-dejavu-sans
-          - font-envy-code-r
-          - font-fira-code
-          - font-fira-mono
-          - font-inconsolata
-        state: present
-
     - name: HashiCorp Tap
       community.general.homebrew_tap:
         name: hashicorp/tap
