@@ -95,7 +95,7 @@
           - meld
           - osxfuse
           - tigervnc-viewer
-          - visual-studio-code
+          - visual-studio-code  # replace with vscodium?
           - xquartz
 
           - basictex
