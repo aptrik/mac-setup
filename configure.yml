@@ -57,8 +57,8 @@
           - wget
 
           # Yubikey tools
-          - ykpers
-          - ykman
+          #- ykpers
+          #- ykman
         state: present
 
     - name: Install Homebrew GNU packages
