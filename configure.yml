@@ -76,7 +76,7 @@
         name:
           - dropbox
           - google-backup-and-sync
-          - gpg-suite
+          #- gpg-suite
           - karabiner-elements
           - keepingyouawake
           - lastpass
@@ -89,7 +89,7 @@
           - firefox
           - google-chrome
 
-          - dash
+          #- dash
           - emacs
           - java
           - meld
