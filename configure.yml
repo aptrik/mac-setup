@@ -91,15 +91,15 @@
 
           #- dash
           - emacs
-          - java
-          - meld
-          - osxfuse
+          #- java
+          #- meld
+          #- osxfuse
           - tigervnc-viewer
           - visual-studio-code  # replace with vscodium?
           - xquartz
 
-          - basictex
-          - yed
+          #- basictex
+          #- yed
 
           - signal
           - slack
