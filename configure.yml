@@ -47,7 +47,6 @@
           - ripgrep
           - shellcheck
           - ssh-copy-id
-          - sshfs
           - svn
           - tig
           - tmux
