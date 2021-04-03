@@ -8,6 +8,7 @@
     virtualisation: false
 
   tasks:
+
     - name: Install Homebrew packages
       community.general.homebrew:
         name:
@@ -133,4 +134,15 @@
         name:
           - hashicorp/tap/packer
           - hashicorp/tap/vault
+        state: present
+
+    - name: GoReleaser Tap
+      community.general.homebrew_tap:
+        name: goreleaser/tap
+        state: present
+
+    - name: Install GoReleaser
+      community.general.homebrew:
+        name:
+          - goreleaser/tap/goreleaser
         state: present
