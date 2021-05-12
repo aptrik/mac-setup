@@ -112,6 +112,7 @@
           community.general.homebrew:
             name:
               - minikube
+              - k9s
             state: present
         - name: Install virtualisation casks
           community.general.homebrew_cask:
