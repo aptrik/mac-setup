@@ -41,7 +41,6 @@
           - mosh
           - openssh
           - openssl
-          - packer
           - pandoc
           - pv
           - redis
