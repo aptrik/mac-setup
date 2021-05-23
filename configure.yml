@@ -31,23 +31,23 @@
           - gnutls
           - go
           - htop
-          - iftop
-          - isync
+          #- iftop
+          #- isync
           - jq
           - less
           - lzip
-          - maven
-          - mercurial
+          #- maven
+          #- mercurial
           - mosh
           - openssh
           - openssl
-          - pandoc
-          - pv
+          #- pandoc
+          #- pv
           - redis
-          - ripgrep
-          - shellcheck
+          #- ripgrep
+          #- shellcheck
           - ssh-copy-id
-          - svn
+          #- svn
           - tig
           - tmux
           - tree
@@ -93,7 +93,7 @@
           #- java
           #- meld
           #- osxfuse
-          - tigervnc-viewer
+          #- tigervnc-viewer
           - visual-studio-code  # replace with vscodium?
           - xquartz
 
