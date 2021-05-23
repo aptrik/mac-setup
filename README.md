@@ -8,7 +8,7 @@ Ensure Apple's command line tools are installed.
 
 Ensure [Homebrew](https://brew.sh/) is installed.
 
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 Ensure [Ansible](http://docs.ansible.com/intro_installation.html) is installed.
 
