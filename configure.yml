@@ -44,7 +44,7 @@
           #- pandoc
           #- pv
           - redis
-          #- ripgrep
+          - ripgrep
           #- shellcheck
           - ssh-copy-id
           #- svn
@@ -76,6 +76,7 @@
           - dropbox
           - google-backup-and-sync
           #- gpg-suite
+          - hammerspoon
           - karabiner-elements
           - keepingyouawake
           - lastpass
