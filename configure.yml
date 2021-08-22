@@ -147,3 +147,14 @@
         name:
           - goreleaser/tap/goreleaser
         state: present
+
+    - name: Font tap
+      community.general.homebrew_tap:
+        name: homebrew/cask-fonts
+        state: present
+
+    - name: Install Fira Code
+      community.general.homebrew_cask:
+        name:
+          - font-fira-code
+        state: installed
