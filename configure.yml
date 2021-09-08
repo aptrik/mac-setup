@@ -112,13 +112,16 @@
         - name: Install virtualisation packages
           community.general.homebrew:
             name:
-              - minikube
+              - docker
+              - docker-compose
+              - hyperkit
               - k9s
+              - kubernetes-cli
+              - minikube
             state: present
         - name: Install virtualisation casks
           community.general.homebrew_cask:
             name:
-              - docker
               - vagrant
               - vagrant-manager
               - virtualbox
