@@ -32,23 +32,23 @@
           - gnutls
           - go
           - htop
-          #- iftop
-          #- isync
+          # - iftop
+          # - isync
           - jq
           - less
           - lzip
-          #- maven
-          #- mercurial
+          # - maven
+          # - mercurial
           - mosh
           - openssh
           - openssl
-          #- pandoc
-          #- pv
+          # - pandoc
+          # - pv
           - redis
           - ripgrep
-          #- shellcheck
+          # - shellcheck
           - ssh-copy-id
-          #- svn
+          # - svn
           - tig
           - tmux
           - tree
@@ -57,8 +57,8 @@
           - wget
 
           # Yubikey tools
-          #- ykpers
-          #- ykman
+          # - ykpers
+          # - ykman
         state: present
 
     - name: Install Homebrew GNU packages
@@ -76,7 +76,7 @@
         name:
           - dropbox
           - google-backup-and-sync
-          #- gpg-suite
+          # - gpg-suite
           - hammerspoon
           - karabiner-elements
           - keepingyouawake
@@ -90,17 +90,17 @@
           - firefox
           - google-chrome
 
-          #- dash
+          # - dash
           - emacs
-          #- java
-          #- meld
-          #- osxfuse
-          #- tigervnc-viewer
+          # - java
+          # - meld
+          # - osxfuse
+          # - tigervnc-viewer
           - visual-studio-code  # replace with vscodium?
           - xquartz
 
-          #- basictex
-          #- yed
+          # - basictex
+          # - yed
 
           - signal
           - slack
