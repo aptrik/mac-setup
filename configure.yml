@@ -157,8 +157,8 @@
         name: homebrew/cask-fonts
         state: present
 
-    - name: Install Fira Code
+    - name: Install Fonts
       community.general.homebrew_cask:
         name:
-          - font-fira-code
+          - font-fira-code-nerd-font
         state: installed
