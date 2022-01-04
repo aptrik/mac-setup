@@ -55,6 +55,7 @@
           - vim
           - watch
           - wget
+          - yq
 
           # Yubikey tools
           # - ykpers
