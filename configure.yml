@@ -27,6 +27,7 @@
           - findutils
           - fzf
           - git
+          - git-crypt
           - git-extras
           - git-lfs
           - gnutls
