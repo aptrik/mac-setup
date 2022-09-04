@@ -88,7 +88,8 @@ Full Keyboard Access
 
 Key Repeat Rate
 
-    defaults write -g KeyRepeat -int 2
+    defaults write NSGlobalDomain KeyRepeat -int 1           #  15ms (default minimum is 2 == 30ms)
+    defaults write NSGlobalDomain InitialKeyRepeat -int 12   # 180ms (default minimum is 15 == 225ms)
 
 
 ### Hostname
