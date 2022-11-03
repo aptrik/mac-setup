@@ -162,8 +162,14 @@
         name: homebrew/cask-fonts
         state: present
 
+    - name: SF-Mono-Nerd-Font
+      community.general.homebrew_tap:
+        name: epk/epk
+        state: present
+
     - name: Install Fonts
       community.general.homebrew_cask:
         name:
           - font-fira-code-nerd-font
+          - font-sf-mono-nerd-font
         state: installed
