@@ -110,6 +110,7 @@
           - signal
           - slack
           # - webex-meetings
+          - spacelauncher
         state: present
 
     - name: Install virtualisation packages
