@@ -17,7 +17,14 @@ Ensure [Ansible](http://docs.ansible.com/intro_installation.html) is installed.
 
 Run playbook:
 
+    ansible-playbook -C configure.yml
+
+or
+
     ansible-pull --only-if-changed --url https://github.com/aptrik/mac-setup.git configure.yml
+
+or
+
     ansible-pull --only-if-changed --url https://github.com/aptrik/mac-setup.git configure.yml -e virtualisation=true
 
 ## TODO
@@ -38,7 +45,6 @@ The identifier can be found via softwareupdate --list. In the example below, bei
 
     sudo softwareupdate -ia
 
-
 ### Bash
 
 Install the latest version and set as current user's default shell:
@@ -46,7 +52,6 @@ Install the latest version and set as current user's default shell:
     brew install bash && \
         echo $(brew --prefix)/bin/bash | sudo tee -a /etc/shells && \
         chsh -s $(brew --prefix)/bin/bash
-
 
 ### Mail
 
@@ -67,7 +72,6 @@ Autohide
     defaults write com.apple.dock autohide -bool true && \
         killall Dock
 
-
 ### Finder
 
 Show All File Extensions
@@ -77,7 +81,6 @@ Show All File Extensions
 Show Path Bar
 
     defaults write com.apple.finder ShowPathbar -bool true
-
 
 ### Keyboard
 
@@ -90,7 +93,6 @@ Key Repeat Rate
 
     defaults write NSGlobalDomain KeyRepeat -int 1           #  15ms (default minimum is 2 == 30ms)
     defaults write NSGlobalDomain InitialKeyRepeat -int 12   # 180ms (default minimum is 15 == 225ms)
-
 
 ### Hostname
 
