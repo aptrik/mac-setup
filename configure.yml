@@ -85,9 +85,11 @@
           - hammerspoon
           - karabiner-elements
           - keepingyouawake
-          - lastpass
           - rectangle
           - scroll-reverser
+
+          - 1password
+          - 1password-cli
 
           - qlmarkdown
           # xattr -r -d com.apple.quarantine /Applications/QLMarkdown.app
