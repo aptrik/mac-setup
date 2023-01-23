@@ -38,6 +38,7 @@
           - htop
           # - iftop
           # - isync
+          - jdupes
           - jq
           - less
           - lzip
