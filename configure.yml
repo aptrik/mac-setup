@@ -14,7 +14,7 @@
         name:
           - ansible
           - ansible-lint
-          - asciinema
+          # - asciinema
           - aspell
           - bash
           - binutils
@@ -32,7 +32,7 @@
           - git-crypt
           - git-extras
           - git-lfs
-          - glances
+          # - glances
           - gnutls
           - go
           - htop
@@ -44,12 +44,12 @@
           - lzip
           # - maven
           # - mercurial
-          - mosh
+          # - mosh
           - openssh
           - openssl
           # - pandoc
           # - pv
-          - redis
+          # - redis
           - ripgrep
           # - shellcheck
           - ssh-copy-id
@@ -57,7 +57,7 @@
           - tig
           - tmux
           - tree
-          - vale
+          # - vale
           - vim
           - watch
           - wget
@@ -84,7 +84,7 @@
           - dropbox
           - google-backup-and-sync
           # - gpg-suite
-          - hammerspoon
+          # - hammerspoon
           - karabiner-elements
           - keepingyouawake
           - rectangle
@@ -115,7 +115,7 @@
           - signal
           - slack
           # - webex-meetings
-          - spacelauncher
+          # - spacelauncher
         state: present
 
     - name: Install virtualisation packages
@@ -152,16 +152,16 @@
           - hashicorp/tap/vault
         state: present
 
-    - name: GoReleaser Tap
-      community.general.homebrew_tap:
-        name: goreleaser/tap
-        state: present
+    # - name: GoReleaser Tap
+    #   community.general.homebrew_tap:
+    #     name: goreleaser/tap
+    #     state: present
 
-    - name: Install GoReleaser
-      community.general.homebrew:
-        name:
-          - goreleaser/tap/goreleaser
-        state: present
+    # - name: Install GoReleaser
+    #   community.general.homebrew:
+    #     name:
+    #       - goreleaser/tap/goreleaser
+    #     state: present
 
     - name: Font tap
       community.general.homebrew_tap:
