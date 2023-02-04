@@ -6,6 +6,10 @@ Ensure Apple's command line tools are installed.
 
     xcode-select --install
 
+Install Rosetta
+
+    softwareupdate --install-rosetta --agree-to-license
+
 Ensure [Homebrew](https://brew.sh/) is installed.
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
