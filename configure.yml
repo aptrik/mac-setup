@@ -45,13 +45,14 @@
           # - maven
           # - mercurial
           # - mosh
+          # - openjdk
           - openssh
           - openssl
-          # - pandoc
+          - pandoc
           # - pv
           # - redis
           - ripgrep
-          # - shellcheck
+          - shellcheck
           - ssh-copy-id
           # - svn
           - tig
