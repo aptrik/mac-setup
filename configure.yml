@@ -99,7 +99,7 @@
           - quicklook-json
 
           - firefox
-          - google-chrome
+          # - google-chrome
 
           # - dash
           - emacs
@@ -113,8 +113,8 @@
           # - basictex
           # - yed
 
-          - signal
-          - slack
+          # - signal
+          # - slack
           # - webex-meetings
           # - spacelauncher
         state: present
