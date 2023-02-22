@@ -14,7 +14,6 @@
         name:
           - ansible
           - ansible-lint
-          # - asciinema
           - aspell
           - bash
           - binutils
@@ -32,13 +31,10 @@
           - git-crypt
           - git-extras
           - git-lfs
-          # - glances
+          - glances
           - gnutls
           - go
           - htop
-          # - iftop
-          # - isync
-          - jdupes
           - jq
           - less
           - lzip
@@ -49,7 +45,6 @@
           - openssh
           - openssl
           - pandoc
-          # - pv
           # - redis
           - ripgrep
           - shellcheck
@@ -104,7 +99,7 @@
           # - dash
           - emacs
           # - java
-          # - meld
+          - meld
           # - osxfuse
           # - tigervnc-viewer
           - visual-studio-code  # replace with vscodium?
