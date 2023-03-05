@@ -41,7 +41,7 @@
           # - maven
           # - mercurial
           # - mosh
-          # - openjdk
+          - openjdk
           - openssh
           - openssl
           - pandoc
