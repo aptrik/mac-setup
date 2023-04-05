@@ -49,6 +49,11 @@ The identifier can be found via softwareupdate --list. In the example below, bei
 
     sudo softwareupdate -ia
 
+
+#### Disable Gatekeeper
+
+    sudo spctl --master-disable
+
 ### Bash
 
 Install the latest version and set as current user's default shell:
