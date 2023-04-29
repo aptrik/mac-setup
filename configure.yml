@@ -35,6 +35,7 @@
           - gnutls
           - go
           - htop
+          - jless
           - jq
           - less
           - lzip
