@@ -123,6 +123,7 @@
             name:
               - docker
               - docker-compose
+              - helm
               - hyperkit
               - k9s
               - kubernetes-cli
