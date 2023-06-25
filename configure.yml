@@ -78,8 +78,8 @@
     - name: Install Homebrew Cask packages
       community.general.homebrew_cask:
         name:
-          - dropbox
-          - google-backup-and-sync
+          # - dropbox
+          # - google-backup-and-sync
           # - gpg-suite
           # - hammerspoon
           - karabiner-elements
@@ -91,9 +91,9 @@
           - 1password
           - 1password-cli
 
-          - qlmarkdown
+          # - qlmarkdown
           # xattr -r -d com.apple.quarantine /Applications/QLMarkdown.app
-          - quicklook-json
+          # - quicklook-json
 
           - firefox
           # - google-chrome
@@ -101,6 +101,7 @@
           # - dash
           - emacs
           # - java
+          - jetbrains-toolbox
           - meld
           # - osxfuse
           # - tigervnc-viewer
@@ -111,8 +112,8 @@
           # - yed
 
           # - signal
-          # - slack
-          # - webex-meetings
+          - slack
+          - webex-meetings
           # - spacelauncher
         state: present
 
