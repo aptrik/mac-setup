@@ -39,7 +39,7 @@
           - jq
           - less
           - lzip
-          # - maven
+          - maven
           # - mercurial
           # - mosh
           - openjdk
