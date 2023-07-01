@@ -37,6 +37,7 @@
           - htop
           - jless
           - jq
+          - lazygit
           - less
           - lzip
           - maven
