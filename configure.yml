@@ -86,8 +86,9 @@
           - karabiner-elements
           - keepingyouawake
           - maccy
+          - mos
           - rectangle
-          - scroll-reverser
+          # - scroll-reverser
 
           - 1password
           - 1password-cli
