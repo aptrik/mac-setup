@@ -29,6 +29,7 @@
           - fzf
           - git
           - git-crypt
+          - git-delta
           - git-extras
           - git-lfs
           - glances
