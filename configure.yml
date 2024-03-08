@@ -31,7 +31,6 @@
           - git-crypt
           - git-extras
           - git-lfs
-          - glances
           - gnutls
           - go
           - htop
@@ -102,7 +101,6 @@
           - emacs
           # - java
           - jetbrains-toolbox
-          - meld
           # - osxfuse
           # - tigervnc-viewer
           - visual-studio-code  # replace with vscodium?
