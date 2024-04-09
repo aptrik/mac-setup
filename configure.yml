@@ -83,7 +83,7 @@
           - dropbox
           - google-backup-and-sync
           # - gpg-suite
-          # - hammerspoon
+          - hammerspoon
           - karabiner-elements
           - keepingyouawake
           - maccy
