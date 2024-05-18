@@ -100,11 +100,11 @@ Full Keyboard Access
 
 Key Repeat Rate
 
-    defaults read NSGlobalDomain KeyRepeat
-    defaults read NSGlobalDomain InitialKeyRepeat
+    defaults read -g KeyRepeat
+    defaults read -g InitialKeyRepeat
 
-    defaults write NSGlobalDomain KeyRepeat -int 1           #  15ms (default minimum is 2 == 30ms)
-    defaults write NSGlobalDomain InitialKeyRepeat -int 12   # 180ms (default minimum is 15 == 225ms)
+    defaults write -g InitialKeyRepeat -int 12   # 180ms (default minimum is 15 == 225ms)
+    defaults write -g KeyRepeat -int 1           #  15ms (default minimum is 2 == 30ms)
 
 ### Hostname
 
