@@ -178,7 +178,7 @@
       community.general.homebrew_cask:
         name:
           - font-fira-code-nerd-font
-          - font-hack
+          - font-hack-nerd-font
           - font-meslo-lg-nerd-font
           - font-sf-mono-nerd-font
         state: installed
