@@ -95,6 +95,7 @@
           # - quicklook-json
 
           - firefox
+          - firefox@developer-edition
           # - google-chrome
 
           # - dash
