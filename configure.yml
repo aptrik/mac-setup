@@ -23,7 +23,6 @@
           - diffutils
           - direnv
           - dive
-          - dua-cli
           - entr
           - findutils
           - fzf
@@ -42,29 +41,19 @@
           - less
           - lzip
           - maven
-          # - mercurial
-          # - mosh
           - openjdk
           - openssh
           - openssl
           - pandoc
-          # - redis
           - ripgrep
           - shellcheck
           - ssh-copy-id
-          # - svn
-          - tig
           - tmux
           - tree
-          # - vale
           - vim
           - watch
           - wget
           - yq
-
-          # Yubikey tools
-          # - ykpers
-          # - ykman
         state: present
 
     - name: Install Homebrew GNU packages
@@ -82,8 +71,6 @@
         name:
           - dropbox
           - google-backup-and-sync
-          # - gpg-suite
-          # - hammerspoon
           - karabiner-elements
           - keepingyouawake
           - maccy
@@ -93,20 +80,11 @@
           - 1password
           - 1password-cli
 
-          - qlmarkdown
-          # xattr -r -d com.apple.quarantine /Applications/QLMarkdown.app
-          - quicklook-json
-
           - firefox
           # - google-chrome
 
-          # - dash
           - emacs
-          # - java
-          - meld
-          # - osxfuse
-          # - tigervnc-viewer
-          - visual-studio-code  # replace with vscodium?
+          - visual-studio-code
           - xquartz
 
           # - basictex
@@ -116,7 +94,6 @@
           # - signal
           # - slack
           # - webex-meetings
-          # - spacelauncher
         state: present
 
     - name: Install virtualisation packages
@@ -130,15 +107,7 @@
               - hyperkit
               - k9s
               - kubernetes-cli
-              - minikube
-            state: present
-        - name: Install virtualisation casks
-          community.general.homebrew_cask:
-            name:
-              - vagrant
-              - vagrant-manager
-              - virtualbox
-              - virtualbox-extension-pack
+              # - minikube
             state: present
       when: virtualisation|bool
 
@@ -153,17 +122,6 @@
           - hashicorp/tap/packer
           - hashicorp/tap/vault
         state: present
-
-    # - name: GoReleaser Tap
-    #   community.general.homebrew_tap:
-    #     name: goreleaser/tap
-    #     state: present
-
-    # - name: Install GoReleaser
-    #   community.general.homebrew:
-    #     name:
-    #       - goreleaser/tap/goreleaser
-    #     state: present
 
     - name: Font tap
       community.general.homebrew_tap:
