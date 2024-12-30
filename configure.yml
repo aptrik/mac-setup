@@ -70,7 +70,9 @@
       community.general.homebrew_cask:
         name:
           - dropbox
+          - ghostty
           - google-backup-and-sync
+          # - iterm2
           - karabiner-elements
           - keepingyouawake
           - maccy
