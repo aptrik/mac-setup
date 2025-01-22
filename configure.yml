@@ -4,9 +4,6 @@
   gather_facts: false
   hosts: default
 
-  vars:
-    virtualisation: false
-
   tasks:
 
     - name: Install Homebrew packages
@@ -34,9 +31,12 @@
           - glances
           - gnutls
           - go
+          - helm
           - htop
           - jless
           - jq
+          - k9s
+          - kubernetes-cli
           - lazygit
           - less
           - lzip
@@ -46,9 +46,11 @@
           - openssl
           - pandoc
           - ripgrep
+          - rsync
           - shellcheck
           - ssh-copy-id
           - tmux
+          - tmuxp
           - tree
           - vim
           - watch
@@ -69,22 +71,28 @@
     - name: Install Homebrew Cask packages
       community.general.homebrew_cask:
         name:
-          - dropbox
+          - font-fira-code-nerd-font
+          - font-hack-nerd-font
+          - font-meslo-lg-nerd-font
+
           - ghostty
-          - google-backup-and-sync
-          # - iterm2
-          - karabiner-elements
+
           - keepingyouawake
           - maccy
           - rectangle
           - scroll-reverser
 
-          - 1password
-          - 1password-cli
+          # - dropbox
+          # - google-backup-and-sync
+          # - iterm2
+          # - karabiner-elements
 
+          # - 1password
+          # - 1password-cli
+
+          - docker
           - firefox
-          # - google-chrome
-
+          - google-chrome
           - emacs
           - visual-studio-code
           - xquartz
@@ -97,49 +105,3 @@
           # - slack
           # - webex-meetings
         state: present
-
-    - name: Install virtualisation packages
-      block:
-        - name: Install virtualisation packages
-          community.general.homebrew:
-            name:
-              - docker
-              - docker-compose
-              - helm
-              - hyperkit
-              - k9s
-              - kubernetes-cli
-              # - minikube
-            state: present
-      when: virtualisation|bool
-
-    - name: HashiCorp Tap
-      community.general.homebrew_tap:
-        name: hashicorp/tap
-        state: present
-
-    - name: HashiCorp packages
-      community.general.homebrew:
-        name:
-          - hashicorp/tap/packer
-          - hashicorp/tap/vault
-        state: present
-
-    - name: Font tap
-      community.general.homebrew_tap:
-        name: homebrew/cask-fonts
-        state: present
-
-    - name: SF-Mono-Nerd-Font
-      community.general.homebrew_tap:
-        name: epk/epk
-        state: present
-
-    - name: Install Fonts
-      community.general.homebrew_cask:
-        name:
-          - font-fira-code-nerd-font
-          - font-hack-nerd-font
-          - font-meslo-lg-nerd-font
-          - font-sf-mono-nerd-font
-        state: installed
