@@ -23,6 +23,7 @@
           - entr
           - findutils
           - fzf
+          - gdu
           - git
           - git-crypt
           - git-delta
