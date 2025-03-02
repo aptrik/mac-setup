@@ -9,6 +9,7 @@
     - name: Install Homebrew packages
       community.general.homebrew:
         name:
+          - age
           - ansible
           - ansible-lint
           - aspell
@@ -39,7 +40,6 @@
           - jq
           - k9s
           - kubernetes-cli
-          - lazygit
           - less
           - lzip
           - maven
@@ -50,6 +50,7 @@
           - ripgrep
           - rsync
           - shellcheck
+          - sops
           - ssh-copy-id
           - tmux
           - tmuxp
