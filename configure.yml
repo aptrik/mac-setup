@@ -46,6 +46,7 @@
           - openjdk
           - openssh
           - openssl
+          - p7zip
           - pandoc
           - ripgrep
           - rsync
@@ -90,8 +91,8 @@
           # - iterm2
           # - karabiner-elements
 
-          # - 1password
-          # - 1password-cli
+          - 1password
+          - 1password-cli
 
           - docker
           - firefox
