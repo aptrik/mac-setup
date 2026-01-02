@@ -81,7 +81,9 @@
 
           - ghostty
 
+          - hammerspoon
           - keepingyouawake
+          # - keycastr
           - maccy
           - rectangle
           - scroll-reverser
