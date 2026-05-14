@@ -60,6 +60,12 @@
           - watch
           - wget
           - yq
+
+          # Go dev tools
+          - gopls
+          - gofumpt
+          - golangci-lint
+          - golangci-lint-langserver
         state: present
 
     - name: Install Homebrew GNU packages
