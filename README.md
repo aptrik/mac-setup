@@ -1,6 +1,6 @@
 # Mac Setup
 
-## Installation
+## Prerequisites
 
 Ensure Apple's command line tools are installed.
 
@@ -19,17 +19,29 @@ Ensure [Ansible](http://docs.ansible.com/intro_installation.html) is installed.
     brew install ansible
     ansible-galaxy collection install community.general
 
-Run playbook:
+Upgrade the collection to the latest version:
 
-    ansible-playbook -C configure.yml
+    ansible-galaxy collection install community.general --upgrade
 
-or
+## Applying Configuration
+
+Dry-run (check mode — no changes are made):
+
+    ansible-playbook --check configure.yml
+
+Apply the full configuration:
+
+    ansible-playbook configure.yml
+
+Or pull and apply directly from the repository:
 
     ansible-pull --only-if-changed --url https://github.com/aptrik/mac-setup.git configure.yml
 
-or
+The playbook will:
 
-    ansible-pull --only-if-changed --url https://github.com/aptrik/mac-setup.git configure.yml -e virtualisation=true
+1. Install Homebrew packages and casks.
+2. Apply macOS settings from `settings.yml` (Dock, Finder, Keyboard) if present.
+3. Sync Dock items (apps and folders) to match `settings.yml`.
 
 ## TODO
 
