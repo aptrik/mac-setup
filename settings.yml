@@ -1,0 +1,37 @@
+---
+macos_settings:
+  dock:
+    settings:
+      autohide: true
+      magnification: true
+      tilesize: 46.0
+      largesize: 128.0
+      minimize_to_application: true
+      show_recents: false
+    apps:
+      - name: "Ghostty"
+        path: "/Applications/Ghostty.app"
+      - name: "Emacs"
+        path: "/Applications/Emacs.app"
+      - name: "Firefox"
+        path: "/Applications/Firefox.app"
+      - name: "Docker"
+        path: "/Applications/Docker.app"
+      - name: "Activity Monitor"
+        path: "/System/Applications/Utilities/Activity Monitor.app"
+    others:
+      - name: "Downloads"
+        path: "~/Downloads"
+        sort: "dateadded"
+        display: "stack"
+        view: "fan"
+  finder:
+    ShowPathbar: true
+    ShowSidebar: true
+    ShowStatusBar: true
+    FXEnableExtensionChangeWarning: true
+    AppleShowAllExtensions: true
+  keyboard:
+    AppleKeyboardUIMode: 2
+    InitialKeyRepeat: 12
+    KeyRepeat: 1

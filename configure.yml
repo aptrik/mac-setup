@@ -21,6 +21,7 @@
           - diffutils
           - direnv
           - dive
+          - dockutil
           - entr
           - findutils
           - fzf
@@ -117,3 +118,80 @@
           # - slack
           # - webex-meetings
         state: present
+
+    - name: Check if settings.yml exists
+      ansible.builtin.stat:
+        path: "{{ playbook_dir }}/settings.yml"
+      register: settings_file
+
+    - name: Load settings from settings.yml
+      ansible.builtin.include_vars:
+        file: "{{ playbook_dir }}/settings.yml"
+      when: settings_file.stat.exists
+
+    - name: Apply macOS Dock settings
+      community.general.osx_defaults:
+        domain: com.apple.dock
+        key: "{{ item.key }}"
+        type: "{{ item.type }}"
+        value: "{{ item.value }}"
+      loop:
+        - { key: 'autohide', type: 'bool', value: "{{ macos_settings.dock.settings.autohide }}" }
+        - { key: 'magnification', type: 'bool', value: "{{ macos_settings.dock.settings.magnification }}" }
+        - { key: 'tilesize', type: 'float', value: "{{ macos_settings.dock.settings.tilesize | float }}" }
+        - { key: 'largesize', type: 'float', value: "{{ macos_settings.dock.settings.largesize | float }}" }
+        - { key: 'minimize-to-application', type: 'bool', value: "{{ macos_settings.dock.settings.minimize_to_application }}" }
+        - { key: 'show-recents', type: 'bool', value: "{{ macos_settings.dock.settings.show_recents }}" }
+      when: settings_file.stat.exists
+      notify: Restart Dock
+
+    - name: Apply macOS Finder settings
+      community.general.osx_defaults:
+        domain: com.apple.finder
+        key: "{{ item.key }}"
+        type: "{{ item.type }}"
+        value: "{{ item.value }}"
+      loop:
+        - { key: 'ShowPathbar', type: 'bool', value: "{{ macos_settings.finder.ShowPathbar }}" }
+        - { key: 'ShowSidebar', type: 'bool', value: "{{ macos_settings.finder.ShowSidebar }}" }
+        - { key: 'ShowStatusBar', type: 'bool', value: "{{ macos_settings.finder.ShowStatusBar }}" }
+        - { key: 'FXEnableExtensionChangeWarning', type: 'bool', value: "{{ macos_settings.finder.FXEnableExtensionChangeWarning }}" }
+      when: settings_file.stat.exists
+      notify: Restart Finder
+
+    - name: Apply global macOS Finder settings
+      community.general.osx_defaults:
+        domain: NSGlobalDomain
+        key: AppleShowAllExtensions
+        type: bool
+        value: "{{ macos_settings.finder.AppleShowAllExtensions }}"
+      when: settings_file.stat.exists
+      notify: Restart Finder
+
+    - name: Apply macOS Keyboard settings
+      community.general.osx_defaults:
+        domain: NSGlobalDomain
+        key: "{{ item.key }}"
+        type: "{{ item.type }}"
+        value: "{{ item.value }}"
+      loop:
+        - { key: 'AppleKeyboardUIMode', type: 'int', value: "{{ macos_settings.keyboard.AppleKeyboardUIMode }}" }
+        - { key: 'InitialKeyRepeat', type: 'int', value: "{{ macos_settings.keyboard.InitialKeyRepeat }}" }
+        - { key: 'KeyRepeat', type: 'int', value: "{{ macos_settings.keyboard.KeyRepeat }}" }
+      when: settings_file.stat.exists
+
+    - name: Sync macOS Dock items
+      ansible.builtin.command:
+        cmd: "{{ playbook_dir }}/scripts/sync_dock.py{{ ' --check' if ansible_check_mode else '' }}"
+      register: sync_dock_result
+      changed_when: "'Rebuilding Dock' in sync_dock_result.stdout"
+      when: settings_file.stat.exists
+
+  handlers:
+    - name: Restart Dock
+      ansible.builtin.command: killall Dock
+      failed_when: false
+
+    - name: Restart Finder
+      ansible.builtin.command: killall Finder
+      failed_when: false

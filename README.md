@@ -23,6 +23,17 @@ Upgrade the collection to the latest version:
 
     ansible-galaxy collection install community.general --upgrade
 
+## Collecting Current Settings
+
+Export your current macOS settings (Dock layout, Finder preferences, keyboard
+repeat rates, etc.) to `settings.yml`:
+
+    ./scripts/collect.py
+
+This reads preferences from `~/Library/Preferences/` and saves them in a
+portable YAML format. Commit `settings.yml` to the repository so it can be
+used to restore settings on a new machine.
+
 ## Applying Configuration
 
 Dry-run (check mode — no changes are made):
