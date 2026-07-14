@@ -103,9 +103,9 @@
           - 1password
           - 1password-cli
 
-          - docker
+          #- docker
           - firefox
-          - google-chrome
+          #- google-chrome
           - emacs
           - visual-studio-code
           - xquartz
