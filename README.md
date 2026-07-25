@@ -133,10 +133,11 @@ Key Repeat Rate
 
 Set Computer Name/Host Name
 
-    sudo scutil --set ComputerName "newhostname" && \
-    sudo scutil --set HostName "newhostname" && \
-    sudo scutil --set LocalHostName "newhostname" && \
-    sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "newhostname"
+    newhostname=XYZ
+    sudo scutil --set ComputerName "$newhostname" && \
+    sudo scutil --set HostName "$newhostname" && \
+    sudo scutil --set LocalHostName "$newhostname" && \
+    sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$newhostname"
 
 ### Login Window
 
